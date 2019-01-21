@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1> GITHUB SEARCH</h1>
+    <ol>
+      <li>User is required to put a Github user name</li>
+      <li>User can view profile</li>
+      <li>User can view Repositories</li>
+      <li>User can open desired project</li>
+    </ol>
+  </div>
+  <app-profile-form></app-profile-form>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{user.avatar_url}}" height="400" class="img-circle">
+    </div>
+    <div class="col-md-7">
+      <table>
+        <tr>
+          <td>Github username: </td>
+          <td class="label">{{user.login}}</td>
+        </tr>
+        <tr>
+          <td>Repositories: </td>
+          <td class="label">{{user.public_repos}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <a href="{{user.html_url}}" class="btn btn-success" id="view">View Profile</a>
+  <hr>
+  <hr>
+  <div class="card">
+    <div class="card-header">
+      <h2>Your Repositories</h2>
+    </div>
+    <div class="card-body" *ngFor='let repo of repoService.items ; let i = index'>
+      <h4 class="card-title" appHighlight> {{repoService.items[i].name|uppercase}}</h4>
+      <div class="card-text">
+        <p>{{repoService.items[i].description}}</p>
+
+        <p class="center"><a href="{{repoService.items[i].homepage}}" class="btn btn-success">View project</a>
+
+          <a href="{{repoService.items[i].html_url}}" class="btn btn-success">View Repository</a></p>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+
+</div>
