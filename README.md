@@ -16,7 +16,7 @@ https://chiuri254.github.io/Github-search/
  To start using this project use the following commands:
  ```python
 git clone https://github.com/Chiuri254/Github-search.git
-cd Quotes-App
+cd Git-search
 atom .
 code . (this is if Visual Studio Code is your preferred text editor)
 ```
